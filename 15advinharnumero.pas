@@ -20,8 +20,8 @@ Begin
     writeln('Você chutou acima')
     else if chuts < num then
     writeln('Você chutou abaixo');
-    somc:= chuts + 1
-  until (chuts < 0) or (chuts = num )
-  
-  
+     somc:= somc + 1
+  until (chuts < 0) or (chuts = num );
+  writeln('Numero de chutes foi ' , somc);
+  	
 END.
