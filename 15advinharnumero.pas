@@ -1,23 +1,27 @@
-Program Pzim ;
-var ns,ad:integer;
-
+Program lista1_015 ;
+var nums,chut: string;
+var e:integer;
+var num,somc,chuts : integer;
 Begin
-  writeln('Digite um numero');
-  readln(ns);
-  clrscr;
-  while not (ad = ns) do
-  begin
-    write('Chute :');
-    readln(ad);
-    if(ad > ns) then
-    writeln('Numero esta acima do valor a ser advinhado');
-    writeln;
-    if(ad < ns) then
-    writeln('Numero esta abaixo do valor a ser advinhado, quase l�!');
-    writeln;
-    if(ad = ns) then
-    writeln('Acertou! Parabens!');
-  end;
+  repeat
+    writeln('Tente adivinhar um numero');
+    readln(nums);
+    val(nums,num,e);
+  until (num > 0 );
+  repeat
+	repeat
+    writeln('chute o valor');
+    readln(chut);
+    val(chut,chuts,e);
+  until (chuts > 0);
+    if chuts = num then
+    writeln('Você acertou. Parabéns!!');
+    if chuts > num then
+    writeln('Você chutou acima')
+    else if chuts < num then
+    writeln('Você chutou abaixo');
+    somc:= chuts + 1
+  until (chuts < 0) or (chuts = num )
   
   
-End.
+END.
