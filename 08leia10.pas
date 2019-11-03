@@ -1,4 +1,4 @@
-Program Pzim ;
+Program lista1_ex08 ;
 var cont: integer;
 Begin
 	writeln('Contador');
