@@ -1,0 +1,16 @@
+Program lista1_ex17 ;
+//17) FUP que efetue a soma de todos os números inteiros ímpares que são múltiplos de 3 e que se
+//encontram no conjunto dos números de 1 até 500.
+var num,soma :integer;
+Begin
+  WRITELN('Este programa vai somar todos os números impares inteiros que são múltiplos de 3 entre 1 e 500');
+  WRITELN();
+  // Se quiser testar outro número, altere o 500
+  FOR num:=1 TO 500 DO
+  BEGIN
+    IF ((num MOD 3 = 0) and (num MOD 2= 1) ) THEN
+    soma := soma + num;
+  END;
+  WRITELN('O resultado é: ', soma);
+  
+End.
