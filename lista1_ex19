@@ -1,0 +1,30 @@
+program lista1_ex19;
+ //FUP que leia uma série de alturas de pessoas, encerrada por uma altura negativa. 
+// Antes de terminar o programa mostrar: a maior e a menor altura lida.
+VAR e: integer;
+var hs: string;
+var h,regm,tmp: real;
+
+Begin
+repeat
+repeat // validar altura
+writeln('Digite a altura');
+readln(hs);
+val(hs,h,e);
+until (h > 0) or (h < 0);
+if h > 0 then
+tmp:=h;
+if (tmp > h) and (h > 0) then
+begin
+tmp:=h; // receber a menor altura
+end;
+if (regm < h) then // recebe maior altura
+begin
+regm := h; // vai receber a maior altura
+end;
+until h < 0;
+
+writeln('maior altura é ' , regm:2:2);
+writeln('menor altura é ' , tmp :2:2);
+
+End.
