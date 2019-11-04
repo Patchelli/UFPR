@@ -1,0 +1,29 @@
+program lista1_ex20;
+ //20) FUP que informe se um número lido é primo ou não
+
+var nums : string;
+var num,e,c,i,cont : integer;
+Begin
+repeat
+cont:=0;
+i:=2;
+repeat
+writeln('Digite o um numero');
+readln(nums);
+val (nums,num,e);
+until (num > 0);
+
+while (i < num) do 
+Begin
+if (num mod i = 0) then
+cont:=cont +1;
+i:=i+1;
+end;
+    if cont > 0 then
+        writeln('O numero ', num , ' Não é PRIMO')
+
+    else
+
+        writeln('O Numero ' , num , ' é PRIMO');
+        until(num < 0)
+End.
