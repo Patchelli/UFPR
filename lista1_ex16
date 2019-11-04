@@ -1,0 +1,77 @@
+Program lista1_ex16 ;
+var l,c,b :string;
+var vts,sair,conf: string;
+var e,vt,somavt,somab,somac,somal,br,nu:integer;
+Begin
+  l:='Lula';
+  c:='Ciro Gomes';
+  b:='Boulos';
+  writeln('Escolha um Candidato');
+  ////////////INICIO DA VALIDAçÃO//////////
+  writeln('Vote 13 para Luis Inacio Lula da Silva');
+  writeln('Vote 12 para Ciro Gomes');
+  writeln('Vote 50 Boulos');
+  repeat
+    repeat
+      writeln('Digite o numero do seu candidato');
+      readln(vts);
+      val(vts,vt,e);
+    until(vt > 0);
+    ////////////FIM DE VALIDAçÃO//////////
+    if(vt = 13) then
+    begin
+      repeat
+        writeln('Você votou no ', l);
+        writeln('Deseja Confirmar S/N');
+        readln(conf);
+        conf:= UpCase(conf);
+        until (conf = 'S') or (conf = 'N');
+        if conf = 'S' then
+        begin
+          writeln('Voto contabilizado para ', l );
+          somal:= somal+1;
+        end;
+      end;
+      //Confirmar o candidato//
+      if(vt = 12) then
+      begin
+        repeat
+          writeln('Você votou no ', c);
+          writeln('Deseja Confirmar S/N');
+          readln(conf);
+          conf:= UpCase(conf);
+          until (conf = 'S') or (conf = 'N');
+          if conf = 'S' then
+          begin
+            writeln('Voto contabilizado para ', b );
+            somac:= somac+1;
+          end;
+        end;
+        //Confirmar o candidato//
+        if(vt = 50) then
+        begin
+          repeat
+            writeln('Você votou no ', b);
+            writeln('Confirme S/N');
+            readln(conf);
+            conf:= UpCase(conf);
+            until (conf = 'S') or (conf = 'N');
+            //confirmar voto
+            if (conf = 'S' )then
+            begin
+              writeln('Voto contabilizado para ', b );
+              somab:= somab+1;
+            end;
+          end;
+          //Confirmar o candidato//
+          
+          writeln('Deseja sair da Urna  S/N?');
+          readln(sair);
+          sair:=Upcase(sair);
+          clrscr;
+          until(sair = 'S' );
+          writeln('O candidato ', l , ' recebeu ' , somal ,' voto(s).');
+          writeln('O candidato ', c , ' recebeu ' , somac ,' voto(s).');
+          writeln('O candidato ', b , ' recebeu ' , somab ,' voto(s).');
+          
+        End.
