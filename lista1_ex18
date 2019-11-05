@@ -1,0 +1,40 @@
+Program lista1_ex18 ;
+//18) FUP que simule uma contagem regressiva de 10 minutos, ou seja, mostre 10:00, 9:59, 9:58, 9:57, até
+//0:0.
+VAR min, seg : INTEGER;
+Begin
+WRITELN('Este programa vai simular uma contagem regressiva de 10 minutos');
+	WRITELN();
+	WRITE('Clique qualquer tecla para iniciar');
+	READLN();
+	
+	min := 10;
+	seg := 0;		
+	
+	WHILE((min > 0) OR (seg > 0)) DO
+	BEGIN
+		CLRSCR; // Limpa a tela
+		// Se minuto/segundo for menor do que 10, coloca um zero à esquerda
+		IF (min < 10) THEN WRITE('0',min)
+		ELSE WRITE (min);
+		WRITE (':');
+		IF (seg < 10) THEN WRITE('0',seg)
+		ELSE WRITE (seg);
+				
+		seg := seg - 1;
+		
+		// Se a quantidade de segundos fica abaixo de zero, diminui 1 minuto 
+		// e a quantidade de segundos muda para 59
+		IF (seg < 0) THEN
+		BEGIN
+			seg := 59;
+			min := min - 1;
+		END;
+		
+		DELAY (1000);  // 1000 milisegundos = 1 segundo
+	END;
+	
+	CLRSCR;
+	WRITELN('ACABOU');
+  
+End.
